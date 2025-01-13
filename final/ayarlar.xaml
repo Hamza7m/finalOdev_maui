@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.ayarlar"
+             Title="ayarlar">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Section: Background Color -->
+            <Label Text="Background Color" FontSize="Medium" />
+            <Picker x:Name="BackgroundColorPicker" Title="Select Color">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>White</x:String>
+                        <x:String>LightGray</x:String>
+                        <x:String>Blue</x:String>
+                        <x:String>Green</x:String>
+                        <x:String>Yellow</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        
+            <Button Text="Apply Settings" Clicked="OnApplySettingsClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

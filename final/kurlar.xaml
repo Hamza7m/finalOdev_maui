@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.kurlar"
+             Title="Güncel Döviz Kurları">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kurları Yükle" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <ListView x:Name="listKurlar" RowHeight="25">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*,*,* ,*">
+                        <Label Grid.Column="0" Background="White" TextColor="Blue" Text="Döviz" FontSize="Large" />
+                        <Label Grid.Column="1" Background="White" TextColor="Green" Text="Alış" FontSize="Large"/>
+                        <Label Grid.Column="2" Background="White" TextColor="Red" Text="Satış" FontSize="Large"/>
+                        <Label Grid.Column="3" Background="White" TextColor="Yellow" Text="Çapraz Oran" FontSize="Large"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,*,*,*">
+                                <Label Grid.Column="0" Text="{Binding Isim}"/>
+                                <Label Grid.Column="1" Text="{Binding ForexBuying}"/>
+                                <Label Grid.Column="2" Text="{Binding ForexSelling}"/>
+                                <Label Grid.Column="3" Text="{Binding CrossRateUSD}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

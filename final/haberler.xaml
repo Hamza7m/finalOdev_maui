@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.haberler"
+             Title="haberler">
+
+    <!-- Toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Yenile" IconImageSource="refresh.png" Clicked="OnRefreshClicked" />
+    </ContentPage.ToolbarItems>
+
+    <!-- Scrollable Content -->
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10">
+            <!-- Category CollectionView -->
+            <Label Text="Kategoriler" FontSize="20" FontAttributes="Bold" />
+            <CollectionView x:Name="CategoryCollectionView"
+                            SelectionMode="Single"
+                            SelectionChanged="OnCategorySelected">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="15" BackgroundColor="DarkBlue"  CornerRadius="5">
+                            <Label Text="{Binding Baslik}" FontSize="18" HorizontalOptions="Center" TextColor="White" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- News CollectionView -->
+            <Label Text="Haberler" FontSize="20" FontAttributes="Bold" />
+            <CollectionView x:Name="NewsList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray" CornerRadius="5" Padding="10" Margin="5">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Title}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       LineBreakMode="TailTruncation" />
+                                <Label Text="{Binding PubDate}" 
+                                       FontSize="12" 
+                                       TextColor="Gray" />
+                                <Label Text="{Binding Description}" 
+                                       FontSize="14" 
+                                       MaxLines="3" 
+                                       LineBreakMode="WordWrap" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+           
+
+            <Label
+                Text="Ödev-2"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+             <Image
+                Source="myphoto3.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+            <Label
+                Text="HAMZA IDRISSA ALMAHMOUD &#10;20670310030"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            <Label
+                  Text="BARTİN ÜNİVERSİTESİ &#10; BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜM"
+                  Style="{StaticResource Headline}"
+                  SemanticProperties.HeadingLevel="Level1" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

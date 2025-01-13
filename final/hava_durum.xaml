@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.hava_durum"
+             Title="Hava Durumu">
+    <VerticalStackLayout >
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" Margin="10">
+            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="20,20,20 ,0">
+                
+                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="LightGray"  Padding="10">
+                    <Label Text="Your Location 📍" FontSize="Default" x:Name="LblCity"/>
+                </Frame>
+                <ImageButton Source="search.png"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" Clicked="ImageButton_Clicked" />
+
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Vertical" Margin="10">
+                <Label  Text="Seattle" x:Name="LblMain" FontSize="40" HorizontalOptions="Center" TextColor="Grey"/>
+                <Label  Text="Clear sky" x:Name="WeatherDesc" FontSize="20" HorizontalOptions="Center" TextColor="Grey"/>
+            </StackLayout>
+            <Image VerticalOptions="Start" Grid.Row="2" x:Name="imageIcon" HeightRequest="300" WidthRequest="300"></Image>
+            <Grid Grid.Row="3"  RowDefinitions="Auto, Auto" ColumnDefinitions="0.33* , 0.33* , 0.33*" Margin="20">
+
+                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" HeightRequest="25" Source="sun.png" x:Name="image1" />
+                <Label x:Name="humadty" Grid.Row="1" Grid.Column="0" Text="88" FontSize="40" HorizontalOptions="Center"/>
+                <Label x:Name="LblTemper" Grid.Row="0" Grid.Column="1" Text="25" FontSize="35" HorizontalOptions="Center" Grid.RowSpan="2" FontAttributes="Bold"/>
+                <Image Grid.Row="0" Grid.Column="2"  Source="weather1.png" HorizontalOptions="Center"   HeightRequest="25"/>
+                <Label x:Name="LblWind" Text="wind" FontSize="25" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"/>
+
+            </Grid>
+            <CollectionView Grid.Row="4" x:Name="Cvweather" HeightRequest="100">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <Image Grid.Row="0" 
+                       Source="{Binding weather[0].IconUrl}" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Start" 
+                       HeightRequest="40" 
+                       WidthRequest="40" />
+                            <Label Grid.Row="1" 
+                       Text="{Binding temp.day}" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center" />
+                            <Label Grid.Row="2" 
+                       Text="{Binding weather[0].description}" 
+                       FontSize="Small" 
+                       HorizontalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

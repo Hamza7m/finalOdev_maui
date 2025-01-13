@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="final.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:final"
+    Shell.FlyoutBehavior="Flyout"
+    Title="menu"
+    Shell.BackgroundColor="DarkBlue"
+    Shell.ForegroundColor="Red"
+    Shell.TitleColor="White"
+    Shell.DisabledColor="Gray"
+    Shell.UnselectedColor="LightGray"
+    Shell.TabBarBackgroundColor="DarkBlue"
+    Shell.TabBarForegroundColor="White">
+    <ShellContent
+     Title="Giriş"
+     ContentTemplate="{DataTemplate local:LoginPage}"
+     Route="LoginPage" 
+     Icon="user.png"/>
+
+    <ShellContent
+    Title="Ana sayfasi"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" 
+    Icon="house.png"/>
+    
+   
+    
+     
+  
+    <ShellContent
+        Title="Yapılacaklar"
+        ContentTemplate="{DataTemplate local:yapilacaklar}"
+        Route="yapilacaklar"
+        Icon="todo.png"/>
+    
+    <ShellContent
+        Title="Haberler"
+        ContentTemplate="{DataTemplate local:haberler}"
+        Route="haberler"
+        Icon="news.png"/>
+    
+    <ShellContent
+        Title="Hava Durumu"
+        ContentTemplate="{DataTemplate local:hava_durum}"
+        Route="hava_durum"
+        Icon="weather_news.png"/>
+    
+    <ShellContent
+        Title="Ayarlar"
+        ContentTemplate="{DataTemplate local:ayarlar}"
+        Route="ayarlar"
+        Icon="settings.png"/>
+
+</Shell>

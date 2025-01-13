@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final.yapilacaklar"
+             Title="Yapilacaklar Listesi">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Yapılacaklar Listesi" 
+           FontSize="24"
+           HorizontalOptions="Center" />
+
+
+        <Entry x:Name="TaskEntry" 
+           Placeholder="Görev ekleyin..."
+           HorizontalOptions="FillAndExpand" />
+
+
+        <Button Text="Ekle" Clicked="OnAddTaskButtonClicked" />
+
+
+        <ListView x:Name="TasksListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout Padding="10">
+                            <CheckBox IsChecked="{Binding IsCompleted}" CheckedChanged="OnTaskCheckboxChanged"/>
+                            <Label Text="{Binding Name}" VerticalOptions="Center" />
+                            <Button Text="Sil" Clicked="OnDeleteTaskButtonClicked" />
+                            <Button Text="Güncelle" Clicked="OnUpdateTaskButtonClicked" />
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
